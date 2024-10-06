@@ -10,14 +10,13 @@ class Day01 {
             s2cnt[s2.charAt(i) - 'a']++;
         }
         for (int i = 0; i < s2.length() - s1.length(); i++) {
-            if (matches(s1cnt, s2cnt))
+            if (matches(s1cnt, s2cnt)) {
                 return true;
-            // Update the window
+
+            }
             s2cnt[s2.charAt(i) - 'a']--;
             s2cnt[s2.charAt(i + s1.length()) - 'a']++;
         }
-
-        // Check the last window
         return matches(s1cnt, s2cnt);
     }
 
